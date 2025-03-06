@@ -1,0 +1,23 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: rgb(211, 211, 211);
+}
+
+@font-face {
+  font-family: "negri";
+  src: url(./fonts/Poppins-Bold.ttf);
+}
+
+@font-face{
+  font-family: "calc";
+  src:url(./fonts/Poppins-ExtraBoldItalic.ttf);
+}
+
+@font-face {
+  font-family: "invalid";
+  src: url(./fonts/Poppins-Italic.ttf);
+}
