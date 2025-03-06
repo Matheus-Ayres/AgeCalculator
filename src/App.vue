@@ -45,6 +45,10 @@ function calcDate() {
       Month.value -= 1;
       Day.value += 30;
     }
+
+    if (Year.value < 0){
+      Year.value = 0
+    }
 }
 
 
@@ -57,13 +61,13 @@ function calcDate() {
         
         <div class="insert">
             <div class="a">
-              <Insert @AgeInsert="setBirthDay" Date="Day" :InvalidDay="birthDay"/>
+              <Insert @AgeInsert="setBirthDay" Date="Day" :MaxLength="2" :InvalidDay="birthDay"/>
             </div>
             <div class="a">
-              <Insert @AgeInsert="setBirthMonth" Date="Month" :InvalidMonth="birthMonth"/>
+              <Insert @AgeInsert="setBirthMonth" Date="Month" :MaxLength="2" :InvalidMonth="birthMonth"/>
             </div>
             <div  class="a">
-              <Insert  @AgeInsert="setBirthYear" Date="Year" :InvalidYear="birthYear"/>
+              <Insert  @AgeInsert="setBirthYear" Date="Year" :MaxLength="4" :InvalidYear="birthYear"/>
             </div>
           </div>
 

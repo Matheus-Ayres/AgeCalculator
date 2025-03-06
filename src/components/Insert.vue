@@ -7,6 +7,7 @@ defineProps({
     InvalidDay: Number,
     InvalidMonth: Number,
     InvalidYear: Number,
+    MaxLength: Number
 })
 
 const Age = ref()
@@ -30,13 +31,13 @@ function GetAge(){
     </div>
     
     <div v-if="InvalidDay > 31 || InvalidMonth > 12 || InvalidYear > date.getFullYear()" class="InvalidDiv">
-        <input :disabled="disabled" p required @change="GetAge" v-model="Age" class="insertInvalid" type="text">
+        <input :disabled="disabled" required @change="GetAge" :maxlength="MaxLength"  v-model="Age" class="insertInvalid" type="text">
         <span class="Alert">
             Must Be a Valid {{ Date }}
         </span>
     </div>
     <div v-else>
-        <input :disabled="disabled" required @change="GetAge" v-model="Age" class="insert" type="text">
+        <input :disabled="disabled" required @change="GetAge" v-model="Age" :maxlength="MaxLength" class="insert" type="text">
     </div>
 </div>
 </template>
